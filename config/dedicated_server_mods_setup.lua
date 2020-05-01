@@ -1,43 +1,75 @@
---There are two functions that will install mods, ServerModSetup and ServerModCollectionSetup. Put the calls to the functions in this file and they will be executed on boot.
+-- This is my own "custom default" modoverrides, with the base server mods I usually play with. Feel
+-- free to use it if you want!
 
---ServerModSetup takes a string of a specific mod's Workshop id. It will download and install the mod to your mod directory on boot.
-	--The Workshop id can be found at the end of the url to the mod's Workshop page.
-	--Example: http://steamcommunity.com/sharedfiles/filedetails/?id=350811795
-	--ServerModSetup("350811795")
+return {
 
---ServerModCollectionSetup takes a string of a specific mod's Workshop id. It will download all the mods in the collection and install them to the mod directory on boot.
-	--The Workshop id can be found at the end of the url to the collection's Workshop page.
-	--Example: http://steamcommunity.com/sharedfiles/filedetails/?id=379114180
-	--ServerModCollectionSetup("379114180")
+  -- Wormhole Marks
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=362175979
+  ["workshop-362175979"]={ configuration_options={ ["Draw over FoW"]="disabled" }, enabled=true },
 
--- Wormhole Marks
--- https://steamcommunity.com/sharedfiles/filedetails/?id=362175979
-ServerModSetup("362175979")
+  -- -- Extra Equip Slots
+  -- -- https://steamcommunity.com/sharedfiles/filedetails/?id=375850593
+  -- ["workshop-375850593"]={ configuration_options={  }, enabled=true },
 
--- Extra Equip Slots
--- https://steamcommunity.com/sharedfiles/filedetails/?id=375850593
-ServerModSetup("375850593")
+  -- Health Info
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=375859599
+  ["workshop-375859599"]={
+    configuration_options={
+      divider=5,
+      random_health_value=0,
+      random_range=0,
+      show_type=0,
+      unknwon_prefabs=1,
+      use_blacklist=true
+    },
+    enabled=true
+  },
 
--- Health Info
--- https://steamcommunity.com/sharedfiles/filedetails/?id=375859599
-ServerModSetup("375859599")
+  -- Global Positions
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=378160973
+  ["workshop-378160973"]={
+    configuration_options={
+      ENABLEPINGS=true,
+      FIREOPTIONS=2,
+      OVERRIDEMODE=false,
+      SHAREMINIMAPPROGRESS=true,
+      SHOWFIREICONS=true,
+      SHOWPLAYERICONS=true,
+      SHOWPLAYERSOPTIONS=2
+    },
+    enabled=true
+  },
 
--- Global Positions
--- https://steamcommunity.com/sharedfiles/filedetails/?id=378160973
-ServerModSetup("378160973")
+  -- Food Values - Item Tooltips (Server and Client)
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=458940297
+  ["workshop-458940297"]={
+    configuration_options={
+      DFV_ClientPrediction="default",
+      DFV_FueledSettings="default",
+      DFV_Language="EN",
+      DFV_MinimalMode="default",
+      DFV_PercentReplace="default",
+      DFV_ShowACondition="default",
+      DFV_ShowADefence="default",
+      DFV_ShowAType="default",
+      DFV_ShowDamage="default",
+      DFV_ShowFireTime="default",
+      DFV_ShowInsulation="default",
+      DFV_ShowTemperature="default",
+      DFV_ShowUses="default"
+    },
+    enabled=true
+  },
 
--- Food Values - Item Tooltips (Server and Client)
--- https://steamcommunity.com/sharedfiles/filedetails/?id=458940297
-ServerModSetup("458940297")
+  -- Quick Pick
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=501385076
+  ["workshop-501385076"]={ configuration_options={  }, enabled=true },
 
--- Quick Pick
--- https://steamcommunity.com/sharedfiles/filedetails/?id=501385076
-ServerModSetup("501385076")
+  -- -- Auto Tooth Trap Reset
+  -- -- https://steamcommunity.com/sharedfiles/filedetails/?id=588560555
+  -- ["workshop-588560555"]={ configuration_options={  }, enabled=true },
 
--- Auto Tooth Trap Reset
--- https://steamcommunity.com/sharedfiles/filedetails/?id=588560555
-ServerModSetup("588560555")
-
--- Epic Healthbar
--- https://steamcommunity.com/sharedfiles/filedetails/?id=1185229307
-ServerModSetup("1185229307")
+  -- Epic Healthbar
+  -- https://steamcommunity.com/sharedfiles/filedetails/?id=1185229307
+  ["workshop-1185229307"]={ configuration_options={  }, enabled=true }
+}
